@@ -35,9 +35,9 @@ class Home extends StatelessWidget
                         //MaterialPageRoute(builder: (context) => Packing_home());
                         //Navigator.push(context, MaterialPageRoute(builder: (context) => Packing_home()));
                         Navigator.push(context, MaterialPageRoute(builder: (context) => Menu(
-                          Title: "Packing",
-                          ButtonTitle1:"Ready for Packing",
-                          ButtonTitle2: "Packing Task List History",)));
+                          title: "Packing",
+                          buttonTitle1:"Ready for Packing",
+                          buttonTitle2: "Packing Task List History",)));
                       },
                     ),
                     Text('Packing',style: Theme.of(context).textTheme.bodyText1)
@@ -54,9 +54,9 @@ class Home extends StatelessWidget
                       onPressed: () {
                         //Go to Unpacking Page
                         Navigator.push(context, MaterialPageRoute(builder: (context) => Menu(
-                          Title: "Unpacking",
-                          ButtonTitle1:"Ready for Unpacking",
-                          ButtonTitle2: "Unpacking Task List History",)));
+                          title: "Unpacking",
+                          buttonTitle1:"Ready for Unpacking",
+                          buttonTitle2: "Unpacking Task List History",)));
                       },
                     ),
                     Text('Unpacking',style: Theme.of(context).textTheme.bodyText1)
@@ -79,9 +79,9 @@ class Home extends StatelessWidget
                         onPressed: () {
                           //Go to Receiving Page
                           Navigator.push(context, MaterialPageRoute(builder: (context) => Menu(
-                            Title: "Receiving",
-                            ButtonTitle1:"Ready for Receiving",
-                            ButtonTitle2: "Receiving Task List History",)));
+                            title: "Receiving",
+                            buttonTitle1:"Ready for Receiving",
+                            buttonTitle2: "Receiving Task List History",)));
                         },
                       ),
                       Text('Receiving',style: Theme.of(context).textTheme.bodyText1)
@@ -98,9 +98,9 @@ class Home extends StatelessWidget
                         onPressed: () {
                           //Go to Releasing Page
                           Navigator.push(context, MaterialPageRoute(builder: (context) => Menu(
-                            Title: "Releasing",
-                            ButtonTitle1:"Ready for Releasing",
-                            ButtonTitle2: "Cargo Details",)));
+                            title: "Releasing",
+                            buttonTitle1:"Ready for Releasing",
+                            buttonTitle2: "Cargo Details",)));
                         },
                       ),
                       Text('Releasing',style: Theme.of(context).textTheme.bodyText1)

@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 
 class CustomButton extends StatelessWidget {
-  final String Name; //Name to display on Button
+  final String name; //Name to display on Button
   final GestureTapCallback onPressed; //Para to take in method for Button
-  final int ButtonColor; //Color of the Button
-  final TextStyle TextTheme; //Text theme of the Text displayed on Button
+  final int buttonColor; //Color of the Button
+  final TextStyle textTheme; //Text theme of the Text displayed on Button
 
   //Only use: (Button Color)
   // 0xff2196f3 (Blue) - Login
@@ -14,20 +14,20 @@ class CustomButton extends StatelessWidget {
   // 0xffffffff (White) - In some cases
 
   CustomButton(
-      {Key key, @required this.Name,@required this.ButtonColor, @required this.TextTheme ,@required this.onPressed });
+      {Key key, @required this.name,@required this.buttonColor, @required this.textTheme ,@required this.onPressed });
 
   Widget build(BuildContext context) { //0xff2196f3
     return  Material(
         elevation: 5.0,
         borderRadius: BorderRadius.circular(30.0),
-        color: Color(ButtonColor),
+        color: Color(buttonColor),
         child: MaterialButton(
             minWidth: MediaQuery.of(context).size.width,
             padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
             onPressed: onPressed,
-            child: Text( Name,
+            child: Text( name,
                 textAlign: TextAlign.center,
-                style: TextTheme
+                style: textTheme
             )
         )
     );

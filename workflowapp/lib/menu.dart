@@ -8,15 +8,15 @@ import 'package:workflowapp/resources/custombutton.dart';
 
 class Menu extends StatelessWidget
 {
-  final String Title; //Title to show on Page
-  final String ButtonTitle1; //Button Title
-  final String ButtonTitle2; //2nd Button Title
-  Menu({Key key, @required this.Title, @required this.ButtonTitle1 , @required this.ButtonTitle2});
+  final String title; //Title to show on Page
+  final String buttonTitle1; //Button Title
+  final String buttonTitle2; //2nd Button Title
+  Menu({Key key, @required this.title, @required this.buttonTitle1 , @required this.buttonTitle2});
 
   Widget build(BuildContext context) {
     return new Scaffold(
         backgroundColor: Color(0xffe7f4f7),
-        appBar: CustomAppBar(Title: Title + " Main Menu"),//Title of App bar
+        appBar: CustomAppBar(title: title + " Main Menu"),//Title of App bar
         body:SingleChildScrollView(
           child: Center(
             child: Container(
@@ -29,27 +29,27 @@ class Menu extends StatelessWidget
                     SizedBox(
                         height: 155.0,
                         child:(
-                            Text(Title, style:Theme.of(context).textTheme.headline1.copyWith(fontSize:24))
+                            Text(title, style:Theme.of(context).textTheme.headline1.copyWith(fontSize:24))
                         )
                     ),
                     SizedBox(height: 45.0),
-                    CustomButton(Name: ButtonTitle1, ButtonColor: 0xffffffff, TextTheme: Theme.of(context).textTheme.bodyText1,
+                    CustomButton(name: buttonTitle1, buttonColor: 0xffffffff, textTheme: Theme.of(context).textTheme.bodyText1,
                         onPressed : ()
                         {
-                          if (ButtonTitle1 == "Ready for Releasing"){ Navigator.push(context, MaterialPageRoute(builder: (context) => Releasing_home()));}
-                          if (ButtonTitle1 == "Ready for Receiving"){ Navigator.push(context, MaterialPageRoute(builder: (context) => Receiving_home()));}
-                          if (ButtonTitle1 == "Ready for Packing"){ Navigator.push(context, MaterialPageRoute(builder: (context) => Packing_home()));}
-                          if (ButtonTitle1 == "Ready for Unpacking"){ Navigator.push(context, MaterialPageRoute(builder: (context) => Unpacking_home()));}
+                          if (buttonTitle1 == "Ready for Releasing"){ Navigator.push(context, MaterialPageRoute(builder: (context) => Releasing_Home()));}
+                          if (buttonTitle1 == "Ready for Receiving"){ Navigator.push(context, MaterialPageRoute(builder: (context) => Receiving_Home()));}
+                          if (buttonTitle1 == "Ready for Packing"){ Navigator.push(context, MaterialPageRoute(builder: (context) => Packing_Home()));}
+                          if (buttonTitle1 == "Ready for Unpacking"){ Navigator.push(context, MaterialPageRoute(builder: (context) => Unpacking_Home()));}
                         }),
                     SizedBox(height: 25.0),
-                    CustomButton(Name: ButtonTitle2, ButtonColor: 0xffffffff, TextTheme: Theme.of(context).textTheme.bodyText1,
+                    CustomButton(name: buttonTitle2, buttonColor: 0xffffffff, textTheme: Theme.of(context).textTheme.bodyText1,
                         onPressed : ()
                         {
                           //Edit the routing
-                          //if (ButtonTitle2 == "Cargo Details"){ Navigator.push(context, MaterialPageRoute(builder: (context) => Releasing_home()));}
-                          //if (ButtonTitle2 == "Receiving Task List History"){ Navigator.push(context, MaterialPageRoute(builder: (context) => Receiving_home()));}
-                          //if (ButtonTitle2 == "Packing Task List History"){ Navigator.push(context, MaterialPageRoute(builder: (context) => Packing_home()));}
-                          //if (ButtonTitle2 == "Unpacking Task List History"){ Navigator.push(context, MaterialPageRoute(builder: (context) => Unpacking_home()));}
+                          //if (buttonTitle2 == "Cargo Details"){ Navigator.push(context, MaterialPageRoute(builder: (context) => Releasing_home()));}
+                          //if (buttonTitle2 == "Receiving Task List History"){ Navigator.push(context, MaterialPageRoute(builder: (context) => Receiving_home()));}
+                          //if (buttonTitle2 == "Packing Task List History"){ Navigator.push(context, MaterialPageRoute(builder: (context) => Packing_home()));}
+                          //if (buttonTitle2 == "Unpacking Task List History"){ Navigator.push(context, MaterialPageRoute(builder: (context) => Unpacking_home()));}
                         }),
                     SizedBox(
                       height: 35.0,

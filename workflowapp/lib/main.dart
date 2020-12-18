@@ -109,7 +109,7 @@ class _LoginPageState extends State<LoginPage> {
                     SizedBox(
                       height: 35.0,
                     ),
-                CustomButton(Name: "Login", ButtonColor: 0xff2196f3, TextTheme: Theme.of(context).textTheme.bodyText2,
+                CustomButton(name: "Login", buttonColor: 0xff2196f3, textTheme: Theme.of(context).textTheme.bodyText2,
                     onPressed : ()
                     {
                       Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => Home()));

@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 //Custom App Bar to be called at every page
 class CustomAppBar extends StatelessWidget with PreferredSizeWidget{
-  final String Title; //Title to show on the bar
-  CustomAppBar({Key key, @required this.Title});
+  final String title; //Title to show on the bar
+  CustomAppBar({Key key, @required this.title});
 
   @override
   Size get preferredSize => Size.fromHeight(kToolbarHeight);
@@ -16,7 +16,7 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget{
           titleSpacing: 10.0,
           centerTitle: true,
           title: new Text(
-            Title,
+            title,
             style: Theme.of(context).textTheme.bodyText1,
           ),
           leading: InkWell(
