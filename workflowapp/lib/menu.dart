@@ -5,6 +5,7 @@ import 'package:workflowapp/releasing/releasing_home.dart';
 import 'package:workflowapp/unpacking/unpacking_home.dart';
 import 'package:workflowapp/resources/appbar.dart';
 import 'package:workflowapp/resources/custombutton.dart';
+import 'package:workflowapp/resources/colors.dart';
 
 class Menu extends StatelessWidget
 {
@@ -15,7 +16,7 @@ class Menu extends StatelessWidget
 
   Widget build(BuildContext context) {
     return new Scaffold(
-        backgroundColor: Color(0xffe7f4f7),
+        backgroundColor: Color(Palette.aliceBlueColor),
         appBar: CustomAppBar(title: title + " Main Menu"),//Title of App bar
         body:SingleChildScrollView(
           child: Center(
@@ -33,7 +34,7 @@ class Menu extends StatelessWidget
                         )
                     ),
                     SizedBox(height: 45.0),
-                    CustomButton(name: buttonTitle1, buttonColor: 0xffffffff, textTheme: Theme.of(context).textTheme.bodyText1,
+                    CustomButton(name: buttonTitle1, buttonColor: Palette.whiteColor, textTheme: Theme.of(context).textTheme.bodyText1,
                         onPressed : ()
                         {
                           if (buttonTitle1 == "Ready for Releasing"){ Navigator.push(context, MaterialPageRoute(builder: (context) => Releasing_Home()));}
@@ -42,7 +43,7 @@ class Menu extends StatelessWidget
                           if (buttonTitle1 == "Ready for Unpacking"){ Navigator.push(context, MaterialPageRoute(builder: (context) => Unpacking_Home()));}
                         }),
                     SizedBox(height: 25.0),
-                    CustomButton(name: buttonTitle2, buttonColor: 0xffffffff, textTheme: Theme.of(context).textTheme.bodyText1,
+                    CustomButton(name: buttonTitle2, buttonColor: Palette.whiteColor, textTheme: Theme.of(context).textTheme.bodyText1,
                         onPressed : ()
                         {
                           //Edit the routing

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:workflowapp/home.dart';
 import 'package:workflowapp/resources/custombutton.dart';
+import 'package:workflowapp/resources/colors.dart';
 
 void main() => runApp(MyApp());
 
@@ -17,18 +18,18 @@ class MyApp extends StatelessWidget {
           //Default Text Theme: (Change Size)
           textTheme: TextTheme(
             //heading (Bold)
-            headline1: TextStyle(fontSize: 19.0,fontWeight: FontWeight.w500, color: Colors.black),
+            headline1: TextStyle(fontSize: 19.0,fontWeight: FontWeight.w500, color: Color(Palette.blackColor)),
 
             //subheading
-            headline2: TextStyle(fontSize: 18.0, color: Colors.grey),
+            headline2: TextStyle(fontSize: 18.0, color: Color(Palette.greyColor)),
 
             //Body Text
-            bodyText1: TextStyle(fontSize: 18.0, color: Colors.black),
+            bodyText1: TextStyle(fontSize: 18.0, color: Color(Palette.blackColor)),
             //For the Button Text
-            bodyText2: TextStyle(fontSize: 20.0, color: Colors.white, fontWeight: FontWeight.bold),
+            bodyText2: TextStyle(fontSize: 20.0, color: Color(Palette.whiteColor), fontWeight: FontWeight.bold),
 
             //Caption
-            caption: TextStyle(fontSize: 12.0,fontWeight: FontWeight.w500, color: Colors.black),
+            caption: TextStyle(fontSize: 12.0,fontWeight: FontWeight.w500, color: Color(Palette.blackColor)),
 
 
 
@@ -70,7 +71,7 @@ class _LoginPageState extends State<LoginPage> {
     // than having to individually change instances of widgets.
 
     return Scaffold(
-        backgroundColor: Color(0xffe7f4f7),
+        backgroundColor: Color(Palette.aliceBlueColor),
         body: SingleChildScrollView(
           child: Center(
             child: Container(

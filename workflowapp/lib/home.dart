@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:workflowapp/main.dart';
 import 'package:workflowapp/menu.dart';
+import 'package:workflowapp/resources/colors.dart';
 //Add additional routes here
 
 class Home extends StatelessWidget
 {
   Widget build(BuildContext context) {
     return new Scaffold(
-        backgroundColor: Color(0xffe7f4f7),
+        backgroundColor: Color(Palette.aliceBlueColor),
         body:
         Column(children: <Widget>[
           SizedBox(//Logo
