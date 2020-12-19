@@ -30,10 +30,8 @@ class MyApp extends StatelessWidget {
 
             //Caption
             caption: TextStyle(fontSize: 12.0,fontWeight: FontWeight.w500, color: Color(Palette.blackColor)),
-
-
-
-          )
+          ),
+          scaffoldBackgroundColor: Color(Palette.whiteColor) //Set all backgrounds to white
 
       ),
       home: LoginPage(title: 'Flutter Login'),
