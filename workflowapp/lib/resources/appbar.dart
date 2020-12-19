@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:workflowapp/resources/colors.dart';
 
 //Custom App Bar to be called at every page
 class CustomAppBar extends StatelessWidget with PreferredSizeWidget{
@@ -28,6 +29,13 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget{
               color: Colors.black54,
             ),
           ),
+            bottom: PreferredSize( //Draw a line at the bottom of app bar
+                child: Container(
+                  color: Color(Palette.blackColor),
+                  height: 4.0,
+                ),
+                preferredSize : Size.fromHeight(4.0)
+            )
         )
     );
   }
