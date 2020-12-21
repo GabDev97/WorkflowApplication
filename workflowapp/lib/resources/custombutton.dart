@@ -7,22 +7,17 @@ enum Direction {
 
 class CustomButtonIcon {
   Image icon; // Icon for the button
-  Direction
-  theDirection; // Arrange the icon to be on top/bottom of the text or left/right besides the text
+  Direction theDirection; // Arrange the icon to be on top/bottom of the text or left/right besides the text
   bool isIconAbove; // indicate whether iconb is above or below of  text
   bool isIconLeft; // indicate whether icon is left or right of text
 
-  CustomButtonIcon(
-      {@required this.icon,
-        @required this.theDirection,
-        this.isIconAbove = true,
-        this.isIconLeft = true});
+  CustomButtonIcon({@required this.icon, @required this.theDirection, this.isIconAbove = true, this.isIconLeft = true});
 }
 
 class CustomButton extends StatelessWidget {
   final String name; //Name to display on Button
   final GestureTapCallback onPressed; //Para to take in method for Button
-  final int buttonColor; //Color of the Button
+  final Color color; //Color of the Button
   final TextStyle textTheme; //Text theme of the Text displayed on Button
   final CustomButtonIcon buttonIcon; // Icon of the button
 
@@ -34,11 +29,11 @@ class CustomButton extends StatelessWidget {
 
   CustomButton(
       {Key key,
-        @required this.name,
-        @required this.buttonColor,
-        @required this.textTheme,
-        @required this.onPressed,
-        this.buttonIcon});
+      @required this.name,
+      @required this.color,
+      @required this.textTheme,
+      @required this.onPressed,
+      this.buttonIcon});
 
   Widget build(BuildContext context) {
     //Child widget for the button
@@ -46,20 +41,18 @@ class CustomButton extends StatelessWidget {
 
     if (this.buttonIcon != null) {
       switch (buttonIcon.theDirection) {
-      //Button contains icon found on left/right side of the text
+        //Button contains icon found on left/right side of the text
         case Direction.HORIZONTAL:
           {
             if (this.buttonIcon.isIconLeft == true) {
-              childWidget = Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    buttonIcon.icon,
-                    Text(
-                      name,
-                      style: textTheme,
-                      textAlign: TextAlign.center,
-                    ),
-                  ]);
+              childWidget = Row(mainAxisAlignment: MainAxisAlignment.center, children: <Widget>[
+                buttonIcon.icon,
+                Text(
+                  name,
+                  style: textTheme,
+                  textAlign: TextAlign.center,
+                ),
+              ]);
             } else {
               childWidget = Row(children: <Widget>[
                 Text(name, style: textTheme),
@@ -68,23 +61,19 @@ class CustomButton extends StatelessWidget {
             }
           }
           break;
-      //Button contains icon found top / bottom of the text
+        //Button contains icon found top / bottom of the text
         case Direction.VERTICAL:
           {
             if (this.buttonIcon.isIconAbove == true) {
-              childWidget = Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    buttonIcon.icon,
-                    Text(name, style: textTheme),
-                  ]);
+              childWidget = Column(mainAxisAlignment: MainAxisAlignment.center, children: <Widget>[
+                buttonIcon.icon,
+                Text(name, style: textTheme),
+              ]);
             } else {
-              childWidget = Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Text(name, style: textTheme),
-                    buttonIcon.icon,
-                  ]);
+              childWidget = Column(mainAxisAlignment: MainAxisAlignment.center, children: <Widget>[
+                Text(name, style: textTheme),
+                buttonIcon.icon,
+              ]);
             }
           }
           break;
@@ -96,12 +85,13 @@ class CustomButton extends StatelessWidget {
 
     //0xff2196f3
     return Material(
-        elevation: 5.0,
         borderRadius: BorderRadius.circular(30.0),
-        color: Color(buttonColor),
         child: MaterialButton(
+          elevation: 5.0,
+          color: color,
           minWidth: MediaQuery.of(context).size.width,
           padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(30.0))),
           onPressed: onPressed,
           child: childWidget,
         ));

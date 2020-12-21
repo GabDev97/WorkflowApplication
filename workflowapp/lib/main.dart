@@ -13,27 +13,27 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        //Default Font Family:
-          fontFamily : 'Roboto',
+          //Default Font Family:
+          fontFamily: 'Roboto',
           //Default Text Theme: (Change Size)
           textTheme: TextTheme(
             //heading (Bold)
-            headline1: TextStyle(fontSize: 19.0,fontWeight: FontWeight.w500, color: Color(Palette.blackColor)),
+            headline1: TextStyle(fontSize: 19.0, fontWeight: FontWeight.w500, color: Palette.charcoalColor),
 
             //subheading
-            headline2: TextStyle(fontSize: 18.0, color: Color(Palette.greyColor)),
+            headline2: TextStyle(fontSize: 18.0, color: Palette.greyColor),
 
             //Body Text
-            bodyText1: TextStyle(fontSize: 18.0, color: Color(Palette.blackColor)),
+            bodyText1: TextStyle(fontSize: 18.0, color: Palette.charcoalColor),
             //For the Button Text
-            bodyText2: TextStyle(fontSize: 20.0, color: Color(Palette.whiteColor), fontWeight: FontWeight.bold),
+            bodyText2: TextStyle(fontSize: 20.0, color: Palette.whiteColor, fontWeight: FontWeight.bold),
 
             //Caption
-            caption: TextStyle(fontSize: 12.0,fontWeight: FontWeight.w500, color: Color(Palette.blackColor)),
+            caption: TextStyle(fontSize: 12.0, fontWeight: FontWeight.w500, color: Palette.charcoalColor),
           ),
-          scaffoldBackgroundColor: Color(Palette.whiteColor) //Set all backgrounds to white
+          scaffoldBackgroundColor: Palette.whiteColor //Set all backgrounds to white
 
-      ),
+          ),
       home: LoginPage(title: 'Flutter Login'),
     );
   }
@@ -58,7 +58,6 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-
   @override
   Widget build(BuildContext context) {
     // This method is rerun every time setState is called, for instance as done
@@ -69,7 +68,7 @@ class _LoginPageState extends State<LoginPage> {
     // than having to individually change instances of widgets.
 
     return Scaffold(
-        backgroundColor: Color(Palette.aliceBlueColor),
+        backgroundColor: Palette.aliceBlueColor,
         body: SingleChildScrollView(
           child: Center(
             child: Container(
@@ -92,8 +91,7 @@ class _LoginPageState extends State<LoginPage> {
                       decoration: InputDecoration(
                           contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
                           hintText: "Email",
-                          border:
-                          OutlineInputBorder(borderRadius: BorderRadius.circular(32.0))),
+                          border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0))),
                     ),
                     SizedBox(height: 25.0),
                     TextField(
@@ -102,17 +100,21 @@ class _LoginPageState extends State<LoginPage> {
                       decoration: InputDecoration(
                           contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
                           hintText: "Password",
-                          border:
-                          OutlineInputBorder(borderRadius: BorderRadius.circular(32.0))),
+                          border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0))),
                     ),
                     SizedBox(
                       height: 35.0,
                     ),
-                CustomButton(name: "Login", buttonColor: 0xff2196f3, textTheme: Theme.of(context).textTheme.bodyText2,
-                    onPressed : ()
-                    {
-                      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => Home()));
-                    }),
+                    CustomButton(
+                        name: "Login",
+                        color: Palette.dodgerBlueColor,
+                        textTheme: Theme.of(context).textTheme.bodyText2,
+                        onPressed: () {
+                          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => Home()));
+                        }),
+                    SizedBox(
+                      height: 35.0,
+                    ),
                     SizedBox(
                       height: 15.0,
                     ),
@@ -121,7 +123,6 @@ class _LoginPageState extends State<LoginPage> {
               ),
             ),
           ),
-        )
-    );
+        ));
   }
 }
