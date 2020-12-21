@@ -8,16 +8,18 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return new Scaffold(
         backgroundColor: Palette.aliceBlueColor,
-        body: Column(children: <Widget>[
-          SizedBox(
+        body: Container(
+        child : Padding(padding: const EdgeInsets.all(36.0),
+            child:Column(children: <Widget>[
+              SizedBox(
             //Logo
-            height: 155.0,
-            child: Image.asset(
+            //height: 155.0,
+              child: Image.asset(
               'assets/Logo.png',
-              width: 300,
+              fit: BoxFit.contain,
             ),
           ),
-          Row(
+              Row(
             //Row 1
             mainAxisAlignment: MainAxisAlignment.center, //Center Row contents horizontally,
             crossAxisAlignment: CrossAxisAlignment.center, //Center Row contents vertically,
@@ -162,6 +164,6 @@ class Home extends StatelessWidget {
                   ),
                 )
               ]),
-        ]));
+        ]))));
   }
 }
