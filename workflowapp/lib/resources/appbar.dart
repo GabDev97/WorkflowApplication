@@ -31,10 +31,10 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget{
           ),
             bottom: PreferredSize( //Draw a line at the bottom of app bar
                 child: Container(
-                  color: Palette.blackColor,
-                  height: 4.0,
+                  color: Palette.greyColor,
+                  height: 0.5,
                 ),
-                preferredSize : Size.fromHeight(4.0)
+                preferredSize : Size.fromHeight(0.5)
             )
         )
     );
