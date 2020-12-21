@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:workflowapp/resources/appbar.dart';
 
+// ignore: camel_case_types
 class Packing_Home extends StatelessWidget
 {
   @override
