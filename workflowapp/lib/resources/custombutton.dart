@@ -84,16 +84,14 @@ class CustomButton extends StatelessWidget {
     }
 
     //0xff2196f3
-    return Material(
-        borderRadius: BorderRadius.circular(30.0),
-        child: MaterialButton(
-          elevation: 5.0,
-          color: color,
-          minWidth: MediaQuery.of(context).size.width,
-          padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(30.0))),
-          onPressed: onPressed,
-          child: childWidget,
-        ));
+    return MaterialButton(
+      elevation: 5.0,
+      color: color,
+      minWidth: MediaQuery.of(context).size.width,
+      padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(30.0))),
+      onPressed: onPressed,
+      child: childWidget,
+    );
   }
 }
