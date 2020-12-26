@@ -2,9 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:workflowapp/main.dart';
 import 'package:workflowapp/menu.dart';
 import 'package:workflowapp/resources/colors.dart';
+import 'package:workflowapp/resources/badge.dart';
 //Add additional routes here
 
 class Home extends StatelessWidget {
+  //For testing Purposes:
+  var counter = 0;
+  var counter1 = 1;
+
   Widget build(BuildContext context) {
     return new Scaffold(
         backgroundColor: Palette.aliceBlueColor,
@@ -28,23 +33,12 @@ class Home extends StatelessWidget {
                 padding: EdgeInsets.all(30),
                 child: Column(
                   children: <Widget>[
-                    IconButton(
-                      icon: Image.asset('assets/PackingIcon.png'),
-                      iconSize: 50,
-                      onPressed: () {
-                        //Go to Packing Page
-                        //MaterialPageRoute(builder: (context) => Packing_home());
-                        //Navigator.push(context, MaterialPageRoute(builder: (context) => Packing_home()));
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => Menu(
-                                      title: "Packing",
-                                      buttonTitle1: "Ready for Packing",
-                                      buttonTitle2: "Packing Task List History",
-                                    )));
-                      },
-                    ),
+                    BadgeIcon(iconImage:'assets/PackingIcon.png', notificationCount: counter1, onPressed: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => Menu(
+                        title: "Packing",
+                        buttonTitle1:"Ready for Packing",
+                        buttonTitle2: "Packing Task List History",)));
+                    }),
                     Text('Packing', style: Theme.of(context).textTheme.bodyText1)
                   ],
                 ),
@@ -53,21 +47,12 @@ class Home extends StatelessWidget {
                 padding: EdgeInsets.all(30),
                 child: Column(
                   children: <Widget>[
-                    IconButton(
-                      icon: Image.asset('assets/UnpackingIcon.png'),
-                      iconSize: 50,
-                      onPressed: () {
-                        //Go to Unpacking Page
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => Menu(
-                                      title: "Unpacking",
-                                      buttonTitle1: "Ready for Unpacking",
-                                      buttonTitle2: "Unpacking Task List History",
-                                    )));
-                      },
-                    ),
+                    BadgeIcon(iconImage:'assets/UnpackingIcon.png', notificationCount: counter1, onPressed: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => Menu(
+                        title: "Unpacking",
+                        buttonTitle1:"Ready for Unpacking",
+                        buttonTitle2: "Unpacking Task List History",)));
+                    }),
                     Text('Unpacking', style: Theme.of(context).textTheme.bodyText1)
                   ],
                 ),
@@ -83,21 +68,12 @@ class Home extends StatelessWidget {
                   padding: EdgeInsets.all(30),
                   child: Column(
                     children: <Widget>[
-                      IconButton(
-                        icon: Image.asset('assets/ReceivingIcon.png'),
-                        iconSize: 50,
-                        onPressed: () {
-                          //Go to Receiving Page
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => Menu(
-                                        title: "Receiving",
-                                        buttonTitle1: "Ready for Receiving",
-                                        buttonTitle2: "Receiving Task List History",
-                                      )));
-                        },
-                      ),
+                      BadgeIcon(iconImage:'assets/ReceivingIcon.png', notificationCount: counter, onPressed: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => Menu(
+                          title: "Receiving",
+                          buttonTitle1:"Ready for Receiving",
+                          buttonTitle2: "Receiving Task List History",)));
+                      }),
                       Text('Receiving', style: Theme.of(context).textTheme.bodyText1)
                     ],
                   ),
@@ -106,21 +82,12 @@ class Home extends StatelessWidget {
                   padding: EdgeInsets.all(30),
                   child: Column(
                     children: <Widget>[
-                      IconButton(
-                        icon: Image.asset('assets/ReleasingIcon.png'),
-                        iconSize: 50,
-                        onPressed: () {
-                          //Go to Releasing Page
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => Menu(
-                                        title: "Releasing",
-                                        buttonTitle1: "Ready for Releasing",
-                                        buttonTitle2: "Cargo Details",
-                                      )));
-                        },
-                      ),
+                      BadgeIcon(iconImage:'assets/ReleasingIcon.png', notificationCount: counter, onPressed: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => Menu(
+                          title: "Releasing",
+                          buttonTitle1:"Ready for Releasing",
+                          buttonTitle2: "Cargo Details",)));
+                      }),
                       Text('Releasing', style: Theme.of(context).textTheme.bodyText1)
                     ],
                   ),
