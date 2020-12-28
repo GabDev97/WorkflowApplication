@@ -83,15 +83,18 @@ class CustomButton extends StatelessWidget {
       childWidget = Text(name, textAlign: TextAlign.center, style: textTheme);
     }
 
-    //0xff2196f3
-    return MaterialButton(
-      elevation: 5.0,
-      color: color,
-      minWidth: MediaQuery.of(context).size.width,
-      padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(30.0))),
+    return RawMaterialButton(
+      fillColor: color,
+      padding: EdgeInsets.all(15.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        // Replace with a Row for horizontal icon + text
+        children: <Widget>[
+          childWidget
+        ],
+      ),
       onPressed: onPressed,
-      child: childWidget,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(7.0)),
     );
   }
 }

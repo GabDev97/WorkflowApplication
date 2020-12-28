@@ -7,36 +7,38 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget{
   CustomAppBar({Key key, @required this.title});
 
   @override
-  Size get preferredSize => Size.fromHeight(kToolbarHeight);
-
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.white,
-          elevation: 0.0,
-          titleSpacing: 10.0,
-          centerTitle: true,
-          title: new Text(
-            title,
-            style: Theme.of(context).textTheme.bodyText1,
-          ),
-          leading: InkWell(
+    return AppBar(
+      centerTitle: true,
+      title: Text(title, style: Theme.of(context).textTheme.bodyText1
+      ),
+      backgroundColor: Palette.whiteColor,
+      leading: GestureDetector(
+        onTap: () {
+          Navigator.pop(context);
+        },
+        child: Icon(
+          Icons.arrow_back,
+          color: Palette.dodgerBlueColor,
+        ),
+      ),
+      actions: <Widget>[
+        Padding(
+          padding: EdgeInsets.only(right: 20.0),
+          child: GestureDetector(
             onTap: () {
-              Navigator.pop(context);
+              //Do something
             },
             child: Icon(
-              Icons.arrow_back_ios,
-              color: Colors.black54,
+              Icons.help_outline,
+              color: Palette.dodgerBlueColor,
             ),
           ),
-            bottom: PreferredSize( //Draw a line at the bottom of app bar
-                child: Container(
-                  color: Palette.greyColor,
-                  height: 0.5,
-                ),
-                preferredSize : Size.fromHeight(0.5)
-            )
         )
+      ],
     );
   }
+
+  @override
+  Size get preferredSize => new Size.fromHeight(kToolbarHeight);
 }

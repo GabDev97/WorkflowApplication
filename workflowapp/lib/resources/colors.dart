@@ -13,4 +13,5 @@ class Palette
   static Color aliceBlueColor = new Color(0xffE3F2FD );
   static Color persianGreenColor = new Color(0xff26A69A);
   static Color redColor = new Color(0xffFF0000);
+  static Color lightBlueAccentColor = new Color(0xff40c4ff);
 }

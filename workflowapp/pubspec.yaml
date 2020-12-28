@@ -51,13 +51,13 @@ flutter:
   #   - images/a_dot_ham.jpeg
   assets:
     - assets/Logo.png
-    - assets/PackingIcon.png
-    - assets/UnpackingIcon.png
-    - assets/ReleasingIcon.png
-    - assets/ReceivingIcon.png
-    - assets/SettingsIcon.png
+    - assets/Packing.png
+    - assets/Unpacking.png
+    - assets/Releasing.png
+    - assets/Receiving.png
+    - assets/Settings.png
     - assets/ArrowIcon.png
-    - assets/LogoutIcon.png
+    - assets/Logout.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 
